@@ -1,10 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
+import UserAvatar from 'react-native-user-avatar';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <UserAvatar
+        size={100}
+        name="Avishay Bar"
+        src="https://randomuser.me/api/portraits/women/90.jpg"
+        component={Image} // This code throws an error on 1.0.6 but works as it should on 1.0.5
+      />
     </View>
   );
 }
@@ -12,8 +18,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
-  },
+    justifyContent: 'center'
+  }
 });
